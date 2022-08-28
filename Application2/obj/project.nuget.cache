@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "4YuC69L02BM/TJj8W0BPfURZAM1JU7f9BPYfwxNH3dTZjLMzZITiZaRAeAuRtFM+g72neMnFJnqRJ5uuT0ZUHA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kniko\\Desktop\\MQTT-Project\\Application2\\Application2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kniko\\.nuget\\packages\\mqttnet\\3.1.0\\mqttnet.3.1.0.nupkg.sha512",
+    "C:\\Users\\kniko\\.nuget\\packages\\serilog\\2.11.0\\serilog.2.11.0.nupkg.sha512",
+    "C:\\Users\\kniko\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}
