@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OouV0wc/G6hJaGniFax4UC9+s/cjsozU+vQaPxHPe1bFe+AcPKReBCnMuG8HuHrloqilbZqA9GvOl1ym7bMrgg==",
+  "dgSpecHash": "nQMAQy3PAWoRRwUIZ2KX0fxOdeZbA5vDU10eRzgOZsA25CKPLkzeKAsUHG8m1G5HMFu0xm2rcaK1a8811osj/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kniko\\Desktop\\MQTT-Project\\Application3\\Application3.csproj",
+  "projectFilePath": "C:\\Users\\kniko\\Desktop\\MQTT-chat-app\\Application3\\Application3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kniko\\.nuget\\packages\\mqttnet\\3.1.0\\mqttnet.3.1.0.nupkg.sha512",
     "C:\\Users\\kniko\\.nuget\\packages\\serilog\\2.11.0\\serilog.2.11.0.nupkg.sha512",

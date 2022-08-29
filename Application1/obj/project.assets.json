@@ -90,11 +90,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kniko\\Desktop\\MQTT-Project\\Application1\\Application1.csproj",
+      "projectUniqueName": "C:\\Users\\kniko\\Desktop\\MQTT-chat-app\\Application1\\Application1.csproj",
       "projectName": "Application1",
-      "projectPath": "C:\\Users\\kniko\\Desktop\\MQTT-Project\\Application1\\Application1.csproj",
+      "projectPath": "C:\\Users\\kniko\\Desktop\\MQTT-chat-app\\Application1\\Application1.csproj",
       "packagesPath": "C:\\Users\\kniko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kniko\\Desktop\\MQTT-Project\\Application1\\obj\\",
+      "outputPath": "C:\\Users\\kniko\\Desktop\\MQTT-chat-app\\Application1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
