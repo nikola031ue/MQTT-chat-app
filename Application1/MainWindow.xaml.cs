@@ -19,37 +19,16 @@ namespace Application1
         IMqttClient client;
         IMqttClientOptions options;
         MqttTopicFilter topicFilter;
+        string server;
 
         private string topic;
         string messageToSend;
-        private readonly string myClientId;
+        private readonly string myClientId="Ivan";
 
         private readonly ObservableCollection<MessageItem> items;
 
         public MainWindow()
         {
-            mqttFactory = new MqttFactory();
-
-            myClientId = Guid.NewGuid().ToString();
-            MessageBox.Show(myClientId);
-
-            client = mqttFactory.CreateMqttClient();
-            options = new MqttClientOptionsBuilder()
-                        .WithClientId(myClientId)
-                        .WithTcpServer("test.mosquitto.org", 1883)
-                        .Build();
-            client.ConnectAsync(options);
-
-            client.UseConnectedHandler(e =>
-            {
-                if (client.IsConnected)
-                {
-                    MessageBox.Show("Connected to brooker1111");
-                    Log.Logger.Information("Successfully connected1111.");
-                }
-
-            });
-
             items = new ObservableCollection<MessageItem>();
 
             InitializeComponent();
@@ -72,8 +51,27 @@ namespace Application1
 
         }
 
-        private void button_Click_Connect(object sender, RoutedEventArgs e)
+        [Obsolete]
+        private async void button_Click_Connect(object sender, RoutedEventArgs e)
         {
+            mqttFactory = new MqttFactory();
+            client = mqttFactory.CreateMqttClient();
+            options = new MqttClientOptionsBuilder()
+                        .WithClientId(myClientId)
+                        .WithTcpServer(server, 1883)
+                        .Build();
+            await client.ConnectAsync(options);
+
+            client.UseConnectedHandler(e =>
+            {
+                if (client.IsConnected)
+                {
+                    MessageBox.Show("Connected to brooker1111");
+                    Log.Logger.Information("Successfully connected1111.");
+                }
+
+            });
+
             topic = tbTopic.Text;
             MessageBox.Show("Konektovani ste na topic: " + topic);
 
@@ -81,7 +79,7 @@ namespace Application1
                                 .WithTopic(topic)
                                 .Build();
 
-            client.SubscribeAsync(topicFilter);
+            await client.SubscribeAsync(topicFilter);
 
             client.UseApplicationMessageReceivedHandler(e =>
             {
@@ -91,7 +89,8 @@ namespace Application1
                 {
                     var splittedMessage = payload.Split(';');
                     var clientId = splittedMessage[0];
-                    var message = splittedMessage[1];
+                    if(splittedMessage.Length <= 1) { return; }
+                    var message = splittedMessage[1]!=null ? splittedMessage[1] : "poruka";
 
                     if (clientId.Equals(myClientId))
                     {
@@ -123,6 +122,12 @@ namespace Application1
             {
                 client.PublishAsync(messageObj);
             }
+        }
+
+        private void Odaberi_Click(object sender, RoutedEventArgs e)
+        {
+            server = cbServer.SelectionBoxItem.ToString().Trim();
+
         }
     }
 }

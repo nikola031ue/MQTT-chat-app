@@ -5,19 +5,27 @@
       "MQTTnet/3.1.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/MQTTnet.dll": {}
+          "lib/net5.0/MQTTnet.dll": {
+            "related": ".deps.json"
+          }
         },
         "runtime": {
-          "lib/net5.0/MQTTnet.dll": {}
+          "lib/net5.0/MQTTnet.dll": {
+            "related": ".deps.json"
+          }
         }
       },
       "Serilog/2.11.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/Serilog.dll": {}
+          "lib/net5.0/Serilog.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/net5.0/Serilog.dll": {}
+          "lib/net5.0/Serilog.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -84,28 +92,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kniko\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\U6071374\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kniko\\Desktop\\MQTT-chat-app\\Application1\\Application1.csproj",
+      "projectUniqueName": "C:\\Users\\U6071374\\Downloads\\MQTT-chat-app-main\\MQTT-chat-app-main\\Application1\\Application1.csproj",
       "projectName": "Application1",
-      "projectPath": "C:\\Users\\kniko\\Desktop\\MQTT-chat-app\\Application1\\Application1.csproj",
-      "packagesPath": "C:\\Users\\kniko\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kniko\\Desktop\\MQTT-chat-app\\Application1\\obj\\",
+      "projectPath": "C:\\Users\\U6071374\\Downloads\\MQTT-chat-app-main\\MQTT-chat-app-main\\Application1\\Application1.csproj",
+      "packagesPath": "C:\\Users\\U6071374\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\U6071374\\Downloads\\MQTT-chat-app-main\\MQTT-chat-app-main\\Application1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kniko\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\U6071374\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows7.0"
+        "net5.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -142,16 +145,11 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.17, 5.0.17]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -160,7 +158,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\PROGRAM FILES\\DOTNET\\sdk\\5.0.410\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

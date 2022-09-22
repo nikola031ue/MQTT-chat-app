@@ -15,11 +15,12 @@ namespace Application2
     public partial class MainWindow : Window
     {
 
-        private readonly string myClientId;
+        private readonly string myClientId="Petar";
 
         MqttFactory mqttFactory;
         IMqttClient client;
         IMqttClientOptions options;
+        string server;
 
         // Observabilna kolekcija, dole ima objasnjenje zasto
         private readonly ObservableCollection<MessageItem> items;
@@ -29,42 +30,40 @@ namespace Application2
         [Obsolete]
         public MainWindow()
         {
-            mqttFactory = new MqttFactory();
-            client = mqttFactory.CreateMqttClient();
-
-            myClientId = Guid.NewGuid().ToString();
-
-            options = new MqttClientOptionsBuilder()
-                        .WithClientId(myClientId)
-                        .WithTcpServer("test.mosquitto.org", 1883)
-                        .Build();
-
-            client.ConnectAsync(options);
-            
-            client.UseConnectedHandler(e =>
-            {
-                if (client.IsConnected)
-                {
-                    MessageBox.Show("Successfully connected.222");
-                    Log.Logger.Information("Successfully connected.222");
-                }
-                
-            });
-
             items = new ObservableCollection<MessageItem>();
 
             InitializeComponent();
         }
 
         [Obsolete]
-        private void button_Click_Connect(object sender, RoutedEventArgs e)
+        private async void button_Click_Connect(object sender, RoutedEventArgs e)
         {
+            mqttFactory = new MqttFactory();
+            client = mqttFactory.CreateMqttClient();
+
+            options = new MqttClientOptionsBuilder()
+                        .WithClientId(myClientId)
+                        .WithTcpServer(server, 1883)
+                        .Build();
+
+            await client.ConnectAsync(options);
+
+            client.UseConnectedHandler(e =>
+            {
+                if (client.IsConnected)
+                {
+                    //MessageBox.Show("Successfully connected.222");
+                    Log.Logger.Information("Successfully connected.222");
+                }
+
+            });
+
             topic = tbTopic.Text;
             
             topicFilter = new TopicFilterBuilder()
                                 .WithTopic(topic)
                                 .Build();
-            client.SubscribeAsync(topicFilter);
+            await client.SubscribeAsync(topicFilter);
 
             MessageBox.Show("Konektovani ste na topic: " + topic);
 
@@ -130,6 +129,12 @@ namespace Application2
             {
                 client.PublishAsync(messageObj);
             }
+        }
+
+        private void Odaberi_Click(object sender, RoutedEventArgs e)
+        {
+            server = cbServer.SelectionBoxItem.ToString().Trim();
+
         }
     }
 }

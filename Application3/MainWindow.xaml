@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Application 3" Height="450" Width="820">
     <Grid Height="434" VerticalAlignment="Top">
-        <TextBox x:Name="tbPayload" HorizontalAlignment="Left" Height="23" Margin="134,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266"/>
-        <Button x:Name="btnPush" Content="Send Message" HorizontalAlignment="Left" Height="37" Margin="440,114,0,0" VerticalAlignment="Top" Width="158" Click="button_Click_Push"/>
-        <ListBox x:Name="listBox2" SelectionMode="Extended" Height="162" Margin="70,179,70,0" VerticalAlignment="Top" Width="660">
+        <TextBox x:Name="tbPayload" HorizontalAlignment="Left" Height="23" Margin="142,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266"/>
+        <Button x:Name="btnPush" Content="Send Message" HorizontalAlignment="Left" Height="37" Margin="448,180,0,0" VerticalAlignment="Top" Width="158" Click="button_Click_Push"/>
+        <ListBox x:Name="listBox3" SelectionMode="Extended" Height="162" Margin="88,245,72,0" VerticalAlignment="Top" Width="660">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,2">
@@ -23,11 +23,17 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBox x:Name="tbTopic" HorizontalAlignment="Left" Height="23" Margin="134,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225"/>
-        <Label x:Name="label" Content="Topic:" HorizontalAlignment="Left" Height="29" Margin="43,49,0,0" VerticalAlignment="Top" Width="72"/>
-        <Button x:Name="btnConnect" Content="Connect on topic" HorizontalAlignment="Left" Height="37" Margin="398,48,0,0" VerticalAlignment="Top" Width="158" Click="button_Click_Connect"/>
-        <Button x:Name="btnDisconnect" Content="Disconnect" HorizontalAlignment="Left" Height="37" Margin="572,49,0,0" VerticalAlignment="Top" Width="158" Click="button_Click_Disconnect"/>
-        <Label x:Name="lblMesage" Content="Message:" HorizontalAlignment="Left" Height="29" Margin="43,122,0,0" VerticalAlignment="Top" Width="72"/>
+        <TextBox x:Name="tbTopic" HorizontalAlignment="Left" Height="23" Margin="142,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225"/>
+        <Label x:Name="label" Content="Topic:" HorizontalAlignment="Left" Height="29" Margin="51,115,0,0" VerticalAlignment="Top" Width="72"/>
+        <Button x:Name="btnConnect" Content="Connect on topic" HorizontalAlignment="Left" Height="37" Margin="406,114,0,0" VerticalAlignment="Top" Width="158" Click="button_Click_Connect"/>
+        <Button x:Name="btnDisconnect" Content="Disconnect" HorizontalAlignment="Left" Height="37" Margin="580,115,0,0" VerticalAlignment="Top" Width="158" Click="button_Click_Disconnect"/>
+        <Label x:Name="lblMesage" Content="Message:" HorizontalAlignment="Left" Height="29" Margin="51,188,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="Server:" HorizontalAlignment="Left" Margin="51,62,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbServer" HorizontalAlignment="Left" Margin="142,66,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="test.mosquitto.org" Name="mosquito"/>
+            <ComboBoxItem Content="127.0.0.1" Name="localhost"/>
+        </ComboBox>
+        <Button x:Name="Odaberi" Content="Odaberi" HorizontalAlignment="Left" Margin="301,68,0,0" VerticalAlignment="Top" Click="Odaberi_Click"/>
 
     </Grid>
 </Window>
